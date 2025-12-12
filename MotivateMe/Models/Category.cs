@@ -10,5 +10,9 @@ namespace MotivateMe.Models
         [MaxLength(100, ErrorMessage = "Category Name cannot exceed 100 Characters")]
         public string Name { get; set; }
         public string? Description { get; set; }
+
+        //This will tell Entity framework that it has 1 to many relationship
+        // one post can have multiple category
+        public ICollection<Post> Posts { get; set; }
     }
 }

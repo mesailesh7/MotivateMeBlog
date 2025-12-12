@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MotivateMe.Models
 {
@@ -17,5 +19,16 @@ namespace MotivateMe.Models
         public string FeatureImagePath { get; set; }
         [DataType(DataType.Date)]
         public DateTime PublishedDate { get; set; } = DateTime.Now;
+
+
+//This will tell Entity framework that Post has a relationship with Category
+        [ForeignKey("Category")]
+        public int CategoryId { get; set; }
+
+        public Category Category { get; set; }
+
+        //This will have 1 to many relationship with comments
+        public ICollection<Comment> Comments { get; set; }
+
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MotivateMe.Models
 {
@@ -16,6 +17,12 @@ namespace MotivateMe.Models
 
         [Required(ErrorMessage = "Comment Content is Required")]
         public string Content { get; set; }
+
+
+        [ForeignKey("Post")]
+        public int PostId { get; set; }
+
+        public Post Post { get; set; }
 
     }
 }
