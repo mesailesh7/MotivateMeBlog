@@ -1,1 +1,37 @@
-﻿<h1>Create Post View</h1>
+﻿@model PostViewModel
+
+@{
+    ViewData["Title"] = "Create Post";
+}
+
+
+<style>
+    .content-wrapper {
+        padding: 20px;
+        max-width: 1000px;
+        margin: 0 auto;
+        font-family: sans-serif;
+</style>
+
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-6">
+            <h2>@ViewData["Title"]</h2>
+        </div>
+
+        <div class="col-6 text-end">
+            <a class="btn btn-primary">Back to List</a>
+        </div>
+    </div>
+
+
+    <hr />
+
+    <form asp-action="Create" asp-controller="Post" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+        <label asp-for="Post.Title"></label>
+        <input asp-for="Post.Title" class="form-control" />
+        <span asp-validation-for="Post.Title" class="text-danger"></span>
+        </div>
+    </form>
+</div>
