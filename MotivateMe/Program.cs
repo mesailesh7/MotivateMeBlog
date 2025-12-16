@@ -42,3 +42,6 @@ namespace MotivateMe
         }
     }
 }
+
+
+//    "DefaultConnection": "Server=SUN\\MSSQLSERVER19;Database=motivateme;Trusted_Connection=True;TrustServerCertificate=true;"
